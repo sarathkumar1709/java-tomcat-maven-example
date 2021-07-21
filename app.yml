@@ -3,5 +3,11 @@
    remote_user: ansadmin
    become: yes
    tasks:
+    - name: container stop
+      shell: docker stop demo
+    - name: container remove
+      shell: docker rm -f demo
     - name: container start
+      shell: docker rmi -f sarath1709/images:0.0.2
+    - name: container start 
       shell: docker run -itd --name demo -p 8070:8080 sarath1709/images:0.0.2
