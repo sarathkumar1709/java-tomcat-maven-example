@@ -7,5 +7,7 @@
       shell: docker stop demo
     - name: container remove
       shell: docker rm -f demo
+    - name: container remove
+      shell: docker rmi -f santhoshawsdocker/santhoshawsgit:new
     - name: container start 
       shell: docker run -itd --name demo -p 8070:8080 santhoshawsdocker/santhoshawsgit:new
