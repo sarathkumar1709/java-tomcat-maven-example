@@ -5,11 +5,7 @@
    tasks:
     - name: container stop
       shell: docker stop demo
-      when: success == false
-      ignore_errors: yes
     - name: container remove
       shell: docker rm -f demo
-      when: success == false
-      ignore_errors: yes
     - name: container start 
       shell: docker run -itd --name demo -p 8070:8080 santhoshawsdocker/santhoshawsgit:new
